@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import moment from 'moment';
 import 'moment/locale/es';
+import Image from 'next/image'
 
 interface Guide {
   id: string;
@@ -45,7 +46,7 @@ export default async function Guias() {
                 <div className="cursor-pointer">
                   {guide.thumbnail ? (
                     <div className="max-w-full h-auto overflow-hidden">
-                      <img
+                      <Image
                         src={`http://127.0.0.1:8090/api/files/pbc_30964190/${guide.id}/${guide.thumbnail}?token=`}
                         alt={guide.title}
                         className="object-contain w-full h-auto"
