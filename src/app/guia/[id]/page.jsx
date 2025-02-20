@@ -1,22 +1,15 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
-interface Guide {
-  id: string;
-  title: string;
-  content: string;
-  thumbnail?: string;
-  created: string;
-}
 
-async function getGuide(id: string): Promise<Guide | null> {
+async function getGuide(id) {
   try {
     const res = await fetch(`http://127.0.0.1:8090/api/collections/guides/records/${id}`);
     if (!res.ok) {
       if (res.status === 404) return null;
       throw new Error(`HTTP error! status: ${res.status}`);
     }
-    const guide: Guide = await res.json();
+    const guide = await res.json();
     return guide;
   } catch (error) {
     console.error("Error fetching guide:", error);
@@ -30,14 +23,9 @@ const Placeholder = () => (
   </div>
 );
 
-// Define the correct props type for the component
-interface GuidePageProps {
-  params: {
-    id: string;
-  };
-}
 
-export default async function Guide({ params }: GuidePageProps) {
+
+export default async function Guide({ params }) {
   const guide = await getGuide(params.id);
 
   if (!guide) {
