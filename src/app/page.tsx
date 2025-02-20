@@ -49,7 +49,6 @@ export default function Inicio() {
           ))}
         </Carousel>
         <div>
-          hello alo
         </div>
       </div>
     </div>
