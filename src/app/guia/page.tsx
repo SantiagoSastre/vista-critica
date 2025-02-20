@@ -20,6 +20,7 @@ async function getAllGuides(): Promise<Guide[]> {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
     const data = await res.json();
+    console.log(data);
     return data.items || [];
   } catch (error) {
     console.error("Error fetching guides:", error);
