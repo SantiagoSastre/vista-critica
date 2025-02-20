@@ -30,10 +30,15 @@ const Placeholder = () => (
   </div>
 );
 
-export default async function Guide({ params }: { params: { id: string } }) {
-  const guidePromise = getGuide(params.id); 
+// Define the correct props type for the component
+interface GuidePageProps {
+  params: {
+    id: string;
+  };
+}
 
-  const guide = await guidePromise; 
+export default async function Guide({ params }: GuidePageProps) {
+  const guide = await getGuide(params.id);
 
   if (!guide) {
     notFound();
