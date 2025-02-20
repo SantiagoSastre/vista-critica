@@ -7,7 +7,7 @@ export default function Inicio() {
   const slides = [
     {
       title: "Vista Crítica: Por un mundo mejor",
-      text: "Todos juntos, colaborando. visita nuestras Guías!",
+      text: "Todos juntos, colaborando. ¡Visita nuestras Guías!",
       image: "/young.jpg"
     },
     {
@@ -17,7 +17,7 @@ export default function Inicio() {
     },
     {
       title: "Sitio en construcción",
-      text: "Más contenido proximamente!!!",
+      text: "Más contenido próximamente!!!",
       image: "/constr.jpg"
     },
   ];
@@ -48,7 +48,7 @@ export default function Inicio() {
           <h1 className="text-3xl font-bold mt-4 mb-4">¿Qué son las Fake News?</h1>
 
           <p className="mb-4">
-            Las noticias falsas, también conocidas como "fake news", son información errónea o sesgada que se presenta como noticias reales. A menudo, se difunden a través de redes sociales y otros medios con la intención de engañar, manipular o influir en la opinión pública.
+            Las noticias falsas, son información errónea o sesgada que se presenta como noticias reales. A menudo, se difunden a través de redes sociales y otros medios con la intención de engañar, manipular o influir en la opinión pública.
           </p>
           <p className="mb-4">
             Es importante destacar que las noticias falsas no son simplemente errores o información inexacta. Se crean y difunden deliberadamente con un propósito específico, ya sea político, económico o de otro tipo.
@@ -63,7 +63,7 @@ export default function Inicio() {
             <strong>Recuerda:</strong> Es fundamental verificar la información que encuentras en línea y consultar fuentes confiables antes de compartir o creer cualquier noticia.
           </p>
         </div>
-        <hr className="my-8 border-gray-300" /> {/* Línea divisoria */}
+        <hr className="my-8 border-gray-300" /> 
 
         <div className="mt-8">
           <h2 className="text-2xl font-semibold mb-4">Consecuencias de las Fake News</h2>
@@ -97,7 +97,8 @@ export default function Inicio() {
             Es fundamental ser consciente de estas consecuencias y tomar medidas para combatir la desinformación.
           </p>
         </div>
-        <div></div>
+        <div>
+        </div>
       </div>
     </div>
   );
