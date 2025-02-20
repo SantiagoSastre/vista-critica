@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Conocenos() {
     return (
 <div className="flex justify-center">
-      <div className="w-1/2 bg-white mt-10 p-6 rounded-lg">
+      <div className="lg:bg-white lg:w-1/2 md:w-2/3 md:bg-white md:p-6 mt-10 lg:p-6 lg:rounded-lg md:rounded-lg relative w-full">
       <div className='flex justify-center mt-8'>
       <Image
       src="/social-media.jpg"

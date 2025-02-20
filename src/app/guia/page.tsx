@@ -35,26 +35,26 @@ export default async function Guias() {
   const guides = await getAllGuides();
 
   return (
-<div className="flex justify-center">
-      <div className="w-1/2 bg-white mt-10 p-6 rounded-lg">
+    <div className="flex justify-center">
+      <div className="bg-white lg:w-1/2 md:w-2/3 mt-10 p-6 rounded-lg relative w-full">
         <h1 className="text-3xl font-bold mb-4">Todas las Guías</h1>
         <div className="grid grid-cols-1 gap-4">
           {guides.map((guide) => (
             <div key={guide.id} className="bg-white rounded-lg shadow-md overflow-hidden">
               <Link href={`/guia/${guide.id}`}>
                 <div className="cursor-pointer">
-                {guide.thumbnail ? (
-          <div className="max-w-full h-auto overflow-hidden"> 
-            <img
-              src={`http://127.0.0.1:8090/api/files/pbc_30964190/${guide.id}/${guide.thumbnail}?token=`}
-              alt={guide.title}
-              className="object-contain w-full h-auto"
-              style={{ maxWidth: '400px', maxHeight: '225px' }}
-            />
-          </div>
-        ) : (
-          <Placeholder />
-        )}
+                  {guide.thumbnail ? (
+                    <div className="max-w-full h-auto overflow-hidden">
+                      <img
+                        src={`http://127.0.0.1:8090/api/files/pbc_30964190/${guide.id}/${guide.thumbnail}?token=`}
+                        alt={guide.title}
+                        className="object-contain w-full h-auto"
+                        style={{ maxWidth: '400px', maxHeight: '225px' }}
+                      />
+                    </div>
+                  ) : (
+                    <Placeholder />
+                  )}
                   <div className="p-4">
                     <h2 className="text-xl font-semibold mb-2">{guide.title}</h2>
                     {guide.description && (

@@ -25,6 +25,7 @@ export default function RootLayout({
   const pathname = usePathname()
   return (
     <html lang="es">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Vista Crítica</title>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}
