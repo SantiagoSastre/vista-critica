@@ -13,7 +13,7 @@ interface Guide {
 
 async function getAllGuides(): Promise<Guide[]> {
   try {
-    const res = await fetch('http://127.0.0.1:8090/api/collections/guides/records');
+    const res = await fetch('https://vistacritica.com/api/api/collections/guides/records');
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
@@ -46,7 +46,7 @@ export default async function Guias() {
                   {guide.thumbnail ? (
                     <div className="max-w-full h-auto overflow-hidden flex justify-center">
                       <img
-                        src={`http://127.0.0.1:8090/api/files/pbc_30964190/${guide.id}/${guide.thumbnail}?token=`}
+                        src={`https://vistacritica.com/api/api//files/pbc_30964190/${guide.id}/${guide.thumbnail}?token=`}
                         alt={guide.title}
                         className="object-contain w-full h-auto"
                         style={{ maxWidth: '600px', maxHeight: '300px' }}
