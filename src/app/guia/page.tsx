@@ -1,7 +1,8 @@
-'use-client';
+'use client';
 import Link from 'next/link';
 import moment from 'moment';
 import 'moment/locale/es';
+import { useEffect, useState } from 'react'; // Import useEffect and useState
 
 interface Guide {
   id: string;
@@ -27,17 +28,26 @@ async function getAllGuides(): Promise<Guide[]> {
 }
 
 const Placeholder = () => (
-  <div className="bg-gray-200 w-full h-48 flex items-center justify-center">
-    <span>Sin Miniatura</span>
-  </div>
-);
+    <div className="bg-gray-200 w-full h-48 flex items-center justify-center">
+      <span>Sin Miniatura</span>
+    </div>
+  );
 
-export default async function Guias() {
-  const guides = await getAllGuides();
+export default function Guias() {
+  const [guides, setGuides] = useState<Guide[]>([]); // Use state to store the guides
+
+  useEffect(() => {
+    async function fetchGuides() {
+      const fetchedGuides = await getAllGuides();
+      setGuides(fetchedGuides);
+    }
+
+    fetchGuides(); // Call the function to fetch data
+  }, []); // The empty dependency array ensures this runs only once after the component mounts
 
   return (
     <div className="flex justify-center">
-      <div className=" lg:w-1/2 md:w-2/3 mt-10 relative w-full">
+      <div className="lg:w-1/2 md:w-2/3 mt-10 relative w-full">
         <h1 className="text-3xl font-bold mb-4">Todas las Guías</h1>
         <div className="grid grid-cols-1 gap-4">
           {guides.map((guide) => (
@@ -47,7 +57,7 @@ export default async function Guias() {
                   {guide.thumbnail ? (
                     <div className="max-w-full h-auto overflow-hidden flex justify-center">
                       <img
-                        src={`https://vistacritica.com/api/api//files/pbc_30964190/${guide.id}/${guide.thumbnail}?token=`}
+                        src={`https://vistacritica.com/api/api/files/pbc_30964190/${guide.id}/${guide.thumbnail}?token=`} // Corrected URL
                         alt={guide.title}
                         className="object-contain w-full h-auto"
                         style={{ maxWidth: '600px', maxHeight: '300px' }}
