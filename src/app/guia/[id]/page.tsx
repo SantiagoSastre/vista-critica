@@ -31,7 +31,9 @@ const Placeholder = () => (
 );
 
 export default async function Guide({ params }: { params: { id: string } }) {
-  const guide = await getGuide(params.id);
+  const guidePromise = getGuide(params.id); 
+
+  const guide = await guidePromise; 
 
   if (!guide) {
     notFound();
@@ -47,8 +49,8 @@ export default async function Guide({ params }: { params: { id: string } }) {
               src={`http://127.0.0.1:8090/api/files/pbc_30964190/${params.id}/${guide.thumbnail}?token=`}
               alt={guide.title}
               className="object-contain w-full h-auto"
-              width={400} // Added width and height attributes
-              height={225}
+              width={400} 
+              height={225} 
             />
           </div>
         ) : (
