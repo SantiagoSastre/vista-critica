@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 
 
 async function getGuide(id) {
@@ -38,7 +37,7 @@ export default async function Guide({ params }) {
         <h1 className="text-3xl font-bold mb-4">{guide.title}</h1>
         {guide.thumbnail ? (
           <div className="max-w-full h-auto overflow-hidden">
-            <Image
+            <img
               src={`http://127.0.0.1:8090/api/files/pbc_30964190/${params.id}/${guide.thumbnail}?token=`}
               alt={guide.title}
               className="object-contain w-full h-auto"
