@@ -1,7 +1,7 @@
 module.exports = {
     apps: [{
       name: "vista-critica",
-      script: "next",
+      script: "pnpm",
       args: ["start"],
       cwd: "./",
       instances: 1,
